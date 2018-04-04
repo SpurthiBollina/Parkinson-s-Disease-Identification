@@ -64,7 +64,8 @@ Tuned these clustering methods such that the distance between clusters is maximu
 Hierarchical clustering is tuned with different distance methods and linkages (‘single’, ‘average’, ‘complete’, ‘ward’). Complete linkage with Euclidean distance outperformed other linkages.
 
  
-
+<p align="center"><img src="Plots/8.png" alt="Plot 1" height="400" width="600">
+<img src="Plots/9.png" alt="Plot 1" height="400" width="600"></p>
  
 
 ### Evaluating Clusters
