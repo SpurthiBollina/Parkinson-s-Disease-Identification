@@ -230,6 +230,9 @@ I observed that the 8 dynamic drawings - *d3, d6, d7, d18, d19, d20, d24, d25* t
 
 I believe this can be improved by extracting SURF features of an image which includes local feature detectors and descriptors. While t-SNE techniques help retain the structural information, these techniques can be used to compare the spikes along the lines.  
 
+<p align="center"><img src="Plots/kmeans.png" alt="Plot 1" height="400" width="600"></p>
+
+
 
 
  
