@@ -40,8 +40,8 @@ The  final data frame obtained is of size *25 X 235620*, with each row represent
 
 <p align="center"><img src="Plots/3.png" alt="Plot 1" height="400" width="600"></p
 
-### Unsupervised Clustering
 
+### Unsupervised Clustering
 ##### Elbow Method
 Initially implemented elbow method to identify the ideal number of clusters to be 4, as shown below, based on the data. However, it made more sense to cluster into just 2 groups as healthy people and Parkinson’s disease ones. 
 
