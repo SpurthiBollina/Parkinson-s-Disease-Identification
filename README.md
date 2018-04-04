@@ -1,6 +1,6 @@
 # Parkinson Disease Dynamic/Spiral Drawings
 
-#### Overview
+### Overview
 ##### Context
 More than 10 million people worldwide are living with Parkinson's disease. Improving machine learning model which identifies Parkinson's disease which will lead to helping patients with early diagnosis and reduction of treatment cost. Implemented an unsupervised classification on the dynamic spiral drawings of the Parkinson’s test dataset, and classify normal people from Parkinson’s disease ones.
 
@@ -18,12 +18,15 @@ Scaled the data and explored multiple clustering techniques (Kmeans, Hierarchica
 	Clustered on Dynamic Spiral Drawings
 	Evaluated including Static Spiral Drawings
 
-#### Data Exploration and Feature Generation on Dynamic Spiral Drawings
+### Data Exploration and Feature Generation on Dynamic Spiral Drawings
 Although all the images are of same size *561 X 420*, observed that few drawings have different scales as shown below. This inconsistency could have significant effect on the cluster formation, as most of the clustering techniques are distance based. 
-  
+
+<p align="center"><img src="Plots/1.png" alt="Plot 1" height="300" width="350">
+<img src="Plots/2.png" alt="Plot 1" height="300" width="350"></p>
+
 To avoid this inconsistency, I have masked all the pixels to NULL values excluding blue pixels. This way obtained data frame with values *(1)* for blue pixels and rest as *0* in each image. 
 
-#### Dimensionality Reduction
+### Dimensionality Reduction
 The  final data frame obtained is of size *25 X 235620*, with each row representing an image and the columns representing pixels within an image. Implemented t-SNE dimensionality reduction technique and obtained data frame of dimensions *25 X 2*. My reasonings on why dimensionality reduction are given below; 
 ##### Why Dimensionality Reduction?
 1. The image data we are dealing here is quite disperse with values only for blue pixels in an image of size *561 X 420*. i.e. variance is spread among large number of features.
@@ -34,10 +37,10 @@ The  final data frame obtained is of size *25 X 235620*, with each row represent
 ##### t-Distributed Stochastic Neighbor Embedding and its hyper parameters
 1. Dimensions – 2. For the ease of visualizing the spread in the data and further viewing clusters.
 2. Perplexity – In general, it is viewed as a knob that sets the number of effective nearest neighbors and that it should be much smaller than the number of data points. I have experimented with perplexity values 2 till 8 and obtained best results at 5. 
- 
 
+<p align="center"><img src="Plots/3.png" alt="Plot 1" height="400" width="600"></p
 
-#### Unsupervised Clustering
+### Unsupervised Clustering
 
 ##### Elbow Method
 Initially implemented elbow method to identify the ideal number of clusters to be 4, as shown below, based on the data. However, it made more sense to cluster into just 2 groups as healthy people and Parkinson’s disease ones. 
@@ -63,7 +66,7 @@ Hierarchical clustering is tuned with different distance methods and linkages (�
 
  
 
-#### Evaluating Clusters
+### Evaluating Clusters
 
 Manually classified the images as drawn by Parkinson’s and non-Parkinson’s. Created a confusion matrix and calculated accuracy as a measure of metric to compare the clustering results. 
 
@@ -141,7 +144,7 @@ Accuracy      – 40%
 We see 60% accuracy with K-means clustering. However, this involves manual intervention and may not be accurate way to evaluate clusters. The best way is to test on dynamic including the static spiral drawings.
 
 
-#### Testing including Static Spiral Drawings 
+### Testing including Static Spiral Drawings 
 
 Results obtained on testing the above fine-tuned cluster methodologies on the dynamic including static spiral drawings are as shown below. Accuracy/error rate are used as a metric to compare the clustering solutions.
 
@@ -219,14 +222,14 @@ Accuracy      – 48%
 We can clearly see that k-means outperforms other clustering methods with 68% accuracy and a good split size (27,23) in the clusters. Spectral and Hierarchical clusters tend to group most of the images into one cluster and this may be the case with dynamic drawings too.
 
 
-#### Observations & Further Enhancements
+### Observations & Further Enhancements
 
 I observed that the 8 dynamic drawings - *d3, d6, d7, d18, d19, d20, d24, d25* that were the only ones classified wrongly as Static were similar in shape but have few spikes along the lines. This made me conclude that the algorithm performs better to a greater extent with regards to grouping similar shapes, however needs to be improved on classifying how they are drawn.
 
 I believe this can be improved by extracting SURF features of an image which includes local feature detectors and descriptors. While t-SNE techniques help retain the structural information, these techniques can be used to compare the spikes along the lines.  
 
 
-#### Appendix
+### Appendix
 
 Plots pertaining to Static and Dynamic Drawings:
 
