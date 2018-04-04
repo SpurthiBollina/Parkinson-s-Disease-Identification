@@ -40,29 +40,28 @@ The  final data frame obtained is of size *25 X 235620*, with each row represent
 1. Dimensions – 2. For the ease of visualizing the spread in the data and further viewing clusters.
 2. Perplexity – In general, it is viewed as a knob that sets the number of effective nearest neighbors and that it should be much smaller than the number of data points. I have experimented with perplexity values 2 till 8 and obtained best results at 5. 
 
-<p align="center"><img src="Plots/3.png" alt="Plot 1" height="400" width="600"></p
+<p align="center"><img src="Plots/3.png" alt="Plot 1" height="400" width="600"></p>
 
 
 ### Unsupervised Clustering
-##### Elbow Method
+#### Elbow Method
 Initially implemented elbow method to identify the ideal number of clusters to be 4, as shown below, based on the data. However, it made more sense to cluster into just 2 groups as healthy people and Parkinson’s disease ones. 
 
- 
+<p align="center"><img src="Plots/4.png" alt="Plot 1" height="400" width="600"></p>
 
 Implemented KMeans, Hierarchical, DBSACN and Spectral clustering techniques with number of clusters as 2. Shown below are the cluster plots;
 
+<p align="center"><img src="Plots/5.png" alt="Plot 1" height="400" width="600">
+<img src="Plots/6.png" alt="Plot 1" height="400" width="600"></p>
  
- 
-
 Above plots give a higher level overview of clusters on the dynamic spiral drawings. We can see that there is a better segmentation with Kmeans, Hierarchical and Spectral Clustering, while DBSCAN method clustered all into one group.
+
 
 Tuned these clustering methods such that the distance between clusters is maximum and within the clusters is minimum. Here are the few more plots to understand the data spread in two clusters with each method.
 
- 
-
+<p align="center"><img src="Plots/7.png" alt="Plot 1" height="400" width="600"></p>
 
 Hierarchical clustering is tuned with different distance methods and linkages (‘single’, ‘average’, ‘complete’, ‘ward’). Complete linkage with Euclidean distance outperformed other linkages.
-
 
  
 
@@ -231,11 +230,6 @@ I observed that the 8 dynamic drawings - *d3, d6, d7, d18, d19, d20, d24, d25* t
 I believe this can be improved by extracting SURF features of an image which includes local feature detectors and descriptors. While t-SNE techniques help retain the structural information, these techniques can be used to compare the spikes along the lines.  
 
 
-### Appendix
-
-Plots pertaining to Static and Dynamic Drawings:
-
- 
 
  
 
